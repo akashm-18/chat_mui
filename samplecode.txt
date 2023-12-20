@@ -1,0 +1,41 @@
+import { Button, styled } from "@mui/material";
+import SettingsIcon from "@mui/icons-material/Settings";
+import AddIcon from "@mui/icons-material/Add";
+
+function App() {
+   const BlueButton = styled(Button)(({ theme }) => ({
+      backgroundColor: "skyblue",
+      color: "#888",
+      margin: 5,
+      "&:hover": {
+         backgroundColor: "lightblue",
+      },
+      "&:disabled": {
+         backgroundColor: "gray",
+         color: "white",
+      },
+   }));
+   return (
+      <div>
+         <Button variant="contained" color="primary">
+            Text
+         </Button>
+         <Button
+            size="small"
+            startIcon={<SettingsIcon />}
+            variant="contained"
+            color="secondary">
+            Settings
+         </Button>
+         <Button startIcon={<AddIcon />} variant="outlined">
+            Add New Post
+         </Button>
+         <BlueButton disabled variant="contained">
+            My Unique Button
+         </BlueButton>
+         <BlueButton color="primary">Another unique Button</BlueButton>
+      </div>
+   );
+}
+
+export default App;
